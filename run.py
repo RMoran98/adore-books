@@ -52,7 +52,7 @@ def get_returns():
             break
 
 
-def validate_num():
+def validate_num(values):
     """
     This function will ensure the data entered can be converted into integers,
     and do so if it is able. Otherwise it will raise a warning.
