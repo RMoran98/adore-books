@@ -103,14 +103,22 @@ def update_worksheet(data, worksheet):
     print(f"{worksheet} worksheet updated.\n")
 
 
-sales_fig = get_sales()
-sales_data = [int(num) for num in sales_fig]
-update_worksheet(sales_data, "sales")
-returns_fig = get_returns()
-returns_data = [int(num) for num in returns_fig]
-update_worksheet(returns_data, "returns")
-profits_fig = get_profits(sales_data, returns_data)
-profits_data = [int(num) for num in profits_fig]
-update_worksheet(profits_data, "profits")
-royalties_fig = get_royalties(profits_data)
-update_worksheet(royalties_fig, "royalties")
+def main():
+    """
+    Calls all of the functions in the program
+    """
+    sales_fig = get_sales()
+    sales_data = [int(num) for num in sales_fig]
+    update_worksheet(sales_data, "sales")
+    returns_fig = get_returns()
+    returns_data = [int(num) for num in returns_fig]
+    update_worksheet(returns_data, "returns")
+    profits_fig = get_profits(sales_data, returns_data)
+    profits_data = [int(num) for num in profits_fig]
+    update_worksheet(profits_data, "profits")
+    royalties_fig = get_royalties(profits_data)
+    update_worksheet(royalties_fig, "royalties")
+
+
+print("This is the automation stsyem for Adore Books!")
+main()
