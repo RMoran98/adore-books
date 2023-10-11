@@ -1,6 +1,12 @@
 # Adore Books
 This is a python program which enables the user to enter data and update a google spreadsheet for a fictional publishing house. It enters the data and performs calculations for the user.
 
+## User Stories
+- As someone with little/no experience with computers, I need clear instructions for this program
+- As a publisher, I need to be able to perform calculations on my sales for different genres of books in one go
+- As a business owner, I need to be able to calculate my total profits based on my sales and returned goods
+- As a publishing house, I need to be able to calculate the total royalties I owe to authors
+
 ## How to Use
 - On running the program, the user will be prompted to enter the sales data, consisting of five numbers in order of the book genre. These numbers should be separated by a comma only, with no blank spaces.
 - Next the user will be asked to enter the returns data, in the same format as before.
@@ -26,3 +32,6 @@ This is a python program which enables the user to enter data and update a googl
 ### Bugs
 - As I was coding this program, I kept having trouble with the `python3 run.py` command to test the code in my chosen code editor, VSCode. As I could not get it to work in my terminal I used the inbuilt run and debug option to run my code locally. I also installed Microsoft's Python and Pylance extensions to allow me to import the required dependencies from my Python installation.
 - My terminal kept giving a warning that my scripts were not on `PATH`. I resolved this by manually adding my Python install to my `PATH` environment variable using [this tutorial.](https://superuser.com/questions/143119/how-do-i-add-python-to-the-windows-path)
+
+## Credits
+- Code Institute's deployment terminal and sample README
