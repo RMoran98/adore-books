@@ -22,3 +22,23 @@ def get_sales():
     print("Example: 1,2,3,4,5\n")
 
     sales_str = input("Please input sales data here: ")
+    sales_data = sales_str.split(",")
+
+    validate_num(sales_data)
+
+
+def validate_num():
+    """
+    This function will ensure the data entered can be converted into integers, and do so if it is able. Otherwise it will raise a warning.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 5:
+            raise ValueError(
+                print(f"Warning! You have not entered five figures, you have entered {
+                      len(values)}")
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please check and try again.\n")
+        return False
+    return True
