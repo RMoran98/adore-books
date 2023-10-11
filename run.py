@@ -30,6 +30,24 @@ def get_sales():
             break
 
 
+def get_returns():
+    """
+    This function will request returns data from the most recent quarter from the user as comma separated values
+    """
+    while True:
+        print("Please enter the returns data from the last quarter.")
+        print("The data should be in order of genre, as follows: Fantasy, Romance, Thriller, Horror, Sci Fi.")
+        print("You should input the five numbers separated by a comma only, without any spaces.")
+        print("Example: 1,2,3,4,5\n")
+
+        returns_str = input("Please input returns data here: ")
+        returns_data = returns_str.split(",")
+
+        if validate_num(returns_data):
+            print("Figures entered successfully.")
+            break
+
+
 def validate_num():
     """
     This function will ensure the data entered can be converted into integers, and do so if it is able. Otherwise it will raise a warning.
