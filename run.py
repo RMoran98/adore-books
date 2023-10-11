@@ -65,6 +65,22 @@ def validate_num():
     return True
 
 
+def get_profits(sales_row, returns_row):
+    """
+    This function will get the profits figures by first subtracting the returns data from the sales data, then multiplying it by 12, which is the sales price of a book from Adore Books
+    """
+    print("Calculating profits...\n")
+
+    sales_num = set(sales_row)
+    returns_num = set(returns_row)
+
+    actual_sales = sales_num - returns_num
+
+    profits = actual_sales * 12
+
+    print("Profits calculated.")
+
+
 def update_worksheet(data, worksheet):
     """
     This function will update the relevant worksheet with data input by the user
@@ -81,3 +97,6 @@ update_worksheet(sales_data, "sales")
 returns_fig = get_returns()
 returns_data = [int(num) for num in returns_fig]
 update_worksheet(returns_data, "returns")
+profits_fig = get_profits(sales_data, returns_data)
+profits_data = [int(num) for num in profits_fig]
+update_worksheet(profits_data, "profits")
