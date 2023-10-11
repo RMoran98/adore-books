@@ -14,12 +14,14 @@ SHEET = GSPREAD_CLIENT.open('adore_books')
 
 def get_sales():
     """
-    This function will request sales data from the most recent quarter from the user as comma separated values
+    This function will request sales data from the most recent quarter
+    from the user as comma separated values
     """
     while True:
         print("Please enter the sales data from the last quarter.")
-        print("The data should be in order of genre, as follows: Fantasy, Romance, Thriller, Horror, Sci Fi.")
-        print("You should input the five numbers separated by a comma only, without any spaces.")
+        print("The data should be in order of genre, as follows:")
+        print("Fantasy, Romance, Thriller, Horror, Sci Fi.")
+        print("You should input the five numbers separated by a comma only.")
         print("Example: 1,2,3,4,5\n")
 
         sales_str = input("Please input sales data here: ")
@@ -32,12 +34,14 @@ def get_sales():
 
 def get_returns():
     """
-    This function will request returns data from the most recent quarter from the user as comma separated values
+    This function will request returns data from the most recent quarter
+    from the user as comma separated values
     """
     while True:
         print("Please enter the returns data from the last quarter.")
-        print("The data should be in order of genre, as follows: Fantasy, Romance, Thriller, Horror, Sci Fi.")
-        print("You should input the five numbers separated by a comma only, without any spaces.")
+        print("The data should be in order of genre, as follows:")
+        print("Fantasy, Romance, Thriller, Horror, Sci Fi.")
+        print("You should input the five numbers separated by a comma only.")
         print("Example: 1,2,3,4,5\n")
 
         returns_str = input("Please input returns data here: ")
@@ -50,13 +54,14 @@ def get_returns():
 
 def validate_num():
     """
-    This function will ensure the data entered can be converted into integers, and do so if it is able. Otherwise it will raise a warning.
+    This function will ensure the data entered can be converted into integers,
+    and do so if it is able. Otherwise it will raise a warning.
     """
     try:
         [int(value) for value in values]
         if len(values) != 5:
             raise ValueError(
-                print(f"Warning! You have not entered five figures, you have entered {
+                print(f"Warning! Five figureds required, you have entered {
                       len(values)}")
             )
     except ValueError as e:
@@ -67,7 +72,9 @@ def validate_num():
 
 def get_profits(sales_row, returns_row):
     """
-    This function will get the profits figures by first subtracting the returns data from the sales data, then multiplying it by 12, which is the sales price of a book from Adore Books
+    This function will get the profits figures by first subtracting
+    the returns data from the sales data, then multiplying it by 12,
+    which is the sales price of a book from Adore Books
     """
     print("Calculating profits...\n")
 
@@ -83,7 +90,9 @@ def get_profits(sales_row, returns_row):
 
 def get_royalties(earnings):
     """
-    This function will calculate the total royalties that Adore Books owes their authors. The royalties rate is 15%, so this is calculated by multiplying the profits by 0.15.
+    This function will calculate the total royalties that Adore Books
+    owes their authors. The royalties rate is 15%, so this is calculated
+    by multiplying the profits by 0.15.
     """
     print("Calculating royalties...")
 
@@ -95,7 +104,8 @@ def get_royalties(earnings):
 
 def update_worksheet(data, worksheet):
     """
-    This function will update the relevant worksheet with data input by the user
+    This function will update the relevant worksheet with
+    data input by the user.
     """
     print(f"{worksheet} worksheet update in progress...")
     worksheet_updating = SHEET.worksheet(worksheet)
@@ -105,7 +115,7 @@ def update_worksheet(data, worksheet):
 
 def main():
     """
-    Calls all of the functions in the program
+    Calls all of the functions in the program.
     """
     sales_fig = get_sales()
     sales_data = [int(num) for num in sales_fig]
@@ -120,5 +130,5 @@ def main():
     update_worksheet(royalties_fig, "royalties")
 
 
-print("This is the automation stsyem for Adore Books!")
+print("This is the automation system for Adore Books!")
 main()
