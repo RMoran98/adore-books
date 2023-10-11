@@ -45,3 +45,13 @@ def validate_num():
         print(f"Invalid data: {e}, please check and try again.\n")
         return False
     return True
+
+
+def update_worksheet():
+    """
+    This function will update the worksheet with data input by the user
+    """
+    print("Worksheet update in progress...")
+    sales_worksheet = SHEET.worksheet("sales")
+    sales_worksheet.append_row(sales_data)
+    print("Worksheet updated.\n")
