@@ -24,7 +24,7 @@ def get_sales():
         print("You should input the five numbers separated by a comma only.")
         print("Example: 1,2,3,4,5\n")
 
-        sales_str = input("Please input sales data here: ")
+        sales_str = input("Please input sales data here: \n")
         sales_data = sales_str.split(",")
 
         if validate_num(sales_data):
@@ -45,7 +45,7 @@ def get_returns():
         print("You should input the five numbers separated by a comma only.")
         print("Example: 1,2,3,4,5\n")
 
-        returns_str = input("Please input returns data here: ")
+        returns_str = input("Please input returns data here: \n")
         returns_data = returns_str.split(",")
 
         if validate_num(returns_data):
