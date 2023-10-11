@@ -32,6 +32,7 @@ This is a python program which enables the user to enter data and update a googl
 ### Bugs
 - As I was coding this program, I kept having trouble with the `python3 run.py` command to test the code in my chosen code editor, VSCode. As I could not get it to work in my terminal I used the inbuilt run and debug option to run my code locally. I also installed Microsoft's Python and Pylance extensions to allow me to import the required dependencies from my Python installation.
 - My terminal kept giving a warning that my scripts were not on `PATH`. I resolved this by manually adding my Python install to my `PATH` environment variable using [this tutorial.](https://superuser.com/questions/143119/how-do-i-add-python-to-the-windows-path)
+- My `validate_num` function was missing an argument, resulting in an error when it was passed an argument by the `get_sales` function
 
 ## Credits
 - Code Institute's deployment terminal and sample README
