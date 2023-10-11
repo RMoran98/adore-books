@@ -80,13 +80,12 @@ def get_profits(sales_row, returns_row):
     """
     print("Calculating profits...\n")
 
-    sales_num = set(sales_row)
-    returns_num = set(returns_row)
-
-    actual_sales = sales_num - returns_num
+    actual_sales = []
+    for sales, returns in zip(sales_row, returns_row):
+        profit = sales - returns
+        actual_sales.append(profit)
 
     profits_data = actual_sales * 12
-
     print("Profits calculated.")
     return profits_data
 
