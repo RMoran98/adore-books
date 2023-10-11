@@ -47,16 +47,16 @@ def validate_num():
     return True
 
 
-def update_worksheet():
+def update_worksheet(data, worksheet):
     """
-    This function will update the worksheet with data input by the user
+    This function will update the relevant worksheet with data input by the user
     """
-    print("Worksheet update in progress...")
-    sales_worksheet = SHEET.worksheet("sales")
-    sales_worksheet.append_row(data)
-    print("Worksheet updated.\n")
+    print(f"{worksheet} worksheet update in progress...")
+    worksheet_updating = SHEET.worksheet(worksheet)
+    worksheet_updating.append_row(data)
+    print(f"{worksheet} worksheet updated.\n")
 
 
 data = get_sales()
 sales_data = [int(num) for num in data]
-update_worksheet(sales_data)
+update_worksheet(sales_data, "sales")
