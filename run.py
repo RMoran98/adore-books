@@ -76,9 +76,21 @@ def get_profits(sales_row, returns_row):
 
     actual_sales = sales_num - returns_num
 
-    profits = actual_sales * 12
+    profits_data = actual_sales * 12
 
     print("Profits calculated.")
+
+
+def get_royalties(earnings):
+    """
+    This function will calculate the total royalties that Adore Books owes their authors. The royalties rate is 15%, so this is calculated by multiplying the profits by 0.15.
+    """
+    print("Calculating royalties...")
+
+    royalties_data = []
+    royalties = earnings * 0.15
+    royalties_data.append(royalties)
+    print("Royalties calculated.")
 
 
 def update_worksheet(data, worksheet):
@@ -100,3 +112,5 @@ update_worksheet(returns_data, "returns")
 profits_fig = get_profits(sales_data, returns_data)
 profits_data = [int(num) for num in profits_fig]
 update_worksheet(profits_data, "profits")
+royalties_fig = get_royalties(profits_data)
+update_worksheet(royalties_fig, "royalties")
