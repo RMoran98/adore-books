@@ -30,6 +30,7 @@ def get_sales():
         if validate_num(sales_data):
             print("Figures entered successfully.")
             break
+    return sales_data
 
 
 def get_returns():
@@ -50,6 +51,7 @@ def get_returns():
         if validate_num(returns_data):
             print("Figures entered successfully.")
             break
+    return returns_data
 
 
 def validate_num(values):
@@ -86,6 +88,7 @@ def get_profits(sales_row, returns_row):
     profits_data = actual_sales * 12
 
     print("Profits calculated.")
+    return profits_data
 
 
 def get_royalties(earnings):
@@ -100,6 +103,8 @@ def get_royalties(earnings):
     royalties = earnings * 0.15
     royalties_data.append(royalties)
     print("Royalties calculated.")
+
+    return royalties_data
 
 
 def update_worksheet(data, worksheet):
