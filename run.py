@@ -16,15 +16,18 @@ def get_sales():
     """
     This function will request sales data from the most recent quarter from the user as comma separated values
     """
-    print("Please enter the sales data from the last quarter.")
-    print("The data should be in order of genre, as follows: Fantasy, Romance, Thriller, Horror, Sci Fi.")
-    print("You should input the five numbers separated by a comma only, without any spaces.")
-    print("Example: 1,2,3,4,5\n")
+    while True:
+        print("Please enter the sales data from the last quarter.")
+        print("The data should be in order of genre, as follows: Fantasy, Romance, Thriller, Horror, Sci Fi.")
+        print("You should input the five numbers separated by a comma only, without any spaces.")
+        print("Example: 1,2,3,4,5\n")
 
-    sales_str = input("Please input sales data here: ")
-    sales_data = sales_str.split(",")
+        sales_str = input("Please input sales data here: ")
+        sales_data = sales_str.split(",")
 
-    validate_num(sales_data)
+        if validate_num(sales_data):
+            print("Figures entered successfully.")
+            break
 
 
 def validate_num():
