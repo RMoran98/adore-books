@@ -75,6 +75,9 @@ def update_worksheet(data, worksheet):
     print(f"{worksheet} worksheet updated.\n")
 
 
-data = get_sales()
-sales_data = [int(num) for num in data]
+sales_fig = get_sales()
+sales_data = [int(num) for num in sales_fig]
 update_worksheet(sales_data, "sales")
+returns_fig = get_returns()
+returns_data = [int(num) for num in returns_fig]
+update_worksheet(returns_data, "returns")
